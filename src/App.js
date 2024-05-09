@@ -7,10 +7,8 @@ import file from '../src/file.png';
 import file1 from '../src/file1.png';
 import file2 from '../src/file2.png';
 import { useState } from 'react';
-import axios from 'axios';
 
 function App() {
-  
   const [formData, setFormData] = useState({
     brandName: '',
     modelName: '',
@@ -53,32 +51,11 @@ function App() {
 
         console.log(formData)
 
-    
-  // axios.post ('https://api.whatsapp.com/send?phone=9108950528203&text=Hey%20Mr.%20Parveen%20Saini%20Your%20request%20is%20rejected%20due%20to%20wrong%20UTR%20NO.-%20989347893792837492.%20So%20Please%20try%20again%20with%20right%20UTR%20No.%20yamsafar.in%20Wish%20you%20a%20peaceful%20life.', formData)
-  // .then(response => {
-  //   // Handle success response
-  //   console.log('Success:', response.data);
-
-
-  //   setFormData(
-  //     {brandName: '',
-  //     modelName: '',
-  //     ram: '',
-  //     storage: '',
-  //     warranty: false,
-  //     condition: '',
-  //   name: '',
-  //     phoneNo: '',
-  //     email: '',
-  //     city: ''}
-  //   )
-
-  // })
-  // .catch(error => {
-  //   // Handle error
-  //   console.error('Error:', error);
-  // });
-  };
+ 
+  //       navigation.navigate("/https://api.whatsapp.com/send?phone=9108950528203&text=Hey%20Mr.%20Parveen%20Saini%20Your%20request%20is%20rejected%20due%20to%20wrong%20UTR%20NO.-%20989347893792837492.%20So%20Please%20try%20again%20with%20right%20UTR%20No.%20yamsafar.in%20Wish%20you%20a%20peaceful%20life");
+  // };
+  window.location.href = "https://api.whatsapp.com/send?phone=9108950528203&text=Hey%20Mr.%20Parveen%20Saini%20Your%20request%20is%20rejected%20due%20to%20wrong%20UTR%20NO.-%20989347893792837492.%20So%20Please%20try%20again%20with%20right%20UTR%20No.%20yamsafar.in%20Wish%20you%20a%20peaceful%20life";
+};
 
   return (
     <>
