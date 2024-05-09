@@ -1,12 +1,12 @@
 // import logo from './logo.svg';
-import './App.css';
-import Mobile from '../src/mobile.jpg';
 import Mobile2 from '../src/img12.png';
+import Mobile from '../src/mobile.jpg';
+import './App.css';
 // import React, { useState } from "react";
+import { useState } from 'react';
 import file from '../src/file.png';
 import file1 from '../src/file1.png';
 import file2 from '../src/file2.png';
-import { useState } from 'react';
 
 function App() {
   const [formData, setFormData] = useState({
@@ -15,12 +15,12 @@ function App() {
     ram: '',
     storage: '',
     warranty: false,
-    condition: '',
-  name: '',
+    name: '',
     phoneNo: '',
     email: '',
     city: '',
   });
+  const [Condition, setCondition]= useState('');
 
   const handleInputChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -30,31 +30,10 @@ function App() {
       [name]: newValue,
     });
   };
-
-  
-  // Function to handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    setFormData(
-          {brandName: '',
-          modelName: '',
-          ram: '',
-          storage: '',
-          warranty:true,
-          condition: '',
-          name: '',
-          phoneNo: '',
-          email: '',
-          city: ''}
-        )
-
-        console.log(formData)
-
- 
-  //       navigation.navigate("/https://api.whatsapp.com/send?phone=9108950528203&text=Hey%20Mr.%20Parveen%20Saini%20Your%20request%20is%20rejected%20due%20to%20wrong%20UTR%20NO.-%20989347893792837492.%20So%20Please%20try%20again%20with%20right%20UTR%20No.%20yamsafar.in%20Wish%20you%20a%20peaceful%20life");
-  // };
-  window.location.href = "https://api.whatsapp.com/send?phone=9108950528203&text=Hey%20Mr.%20Parveen%20Saini%20Your%20request%20is%20rejected%20due%20to%20wrong%20UTR%20NO.-%20989347893792837492.%20So%20Please%20try%20again%20with%20right%20UTR%20No.%20yamsafar.in%20Wish%20you%20a%20peaceful%20life";
+        console.log(formData, Condition);
+  window.location.href = "https://api.whatsapp.com/send?phone=91"+ formData.phoneNo+"&text=Brand name "+ formData.brandName +", Model Number "+ formData.modelName+", City "+ formData.city +", Warranty "+formData.warranty ? 'Yes':'NO' +", Ram "+ formData.ram+", Storage "+ formData.storage+", condition "+ Condition +", User Name "+ formData.name+", email "+ formData.email;
 };
 
   return (
@@ -178,7 +157,7 @@ function App() {
                   id="terms"
                   type="checkbox"
                   name="warranty"
-                // checked={formData.warranty}
+                checked={formData.nowarranty}
                 onChange={handleInputChange}
                 value="No"
                   class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800"
@@ -195,8 +174,6 @@ function App() {
           </div>
           <label
             name="warranty"
-            checked={formData.warranty}
-            onChange={handleInputChange}
             class="ms-2 text-sm font-medium text-gray-500  dark:text-gray-200 duration-150"
           >
             Condition:
@@ -210,9 +187,10 @@ function App() {
               <div class="flex items-start mb-5">
               <div class="flex items-center h-5">
                 <input
-                  id="terms"
+                  id="condition"
                   type="checkbox"
-                  value=""
+                  onChange={(e)=>setCondition(e.target.value)}
+                  value="Good"
                   class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800"
                   
                 />
@@ -231,9 +209,10 @@ function App() {
                <div class="flex items-start  mb-5">
               <div class="flex items-center h-5">
                 <input
-                  id="terms"
+                  id="condition"
                   type="checkbox"
-                  value=""
+                  value="Dents"
+                  onChange={(e)=>setCondition(e.target.value)}
                   class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800"
                   
                 />
@@ -252,9 +231,10 @@ function App() {
                <div class="flex items-start mb-5">
               <div class="flex items-center h-5">
                 <input
-                  id="terms"
+                  id="condition"
                   type="checkbox"
-                  value=""
+                  value="Damage"
+                  onChange={(e)=>setCondition(e.target.value)}
                   class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800"
                   
                 />
