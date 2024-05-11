@@ -33,7 +33,7 @@ function App() {
   const handleSubmit = (e) => {
     e.preventDefault();
         console.log(formData, Condition);
-  // window.location.href = "https://api.whatsapp.com/send?phone=917708974149&text=Brand name "+ formData.brandName +", Model Number "+ formData.modelName+", City "+ formData.city +", Warranty "+formData.warranty ? 'Yes':'NO' +", Ram "+ formData.ram+", Storage "+ formData.storage+", condition "+ Condition +", User Name "+ formData.name+", email "+ formData.email;
+  window.location.href = "https://api.whatsapp.com/send?phone=917708974149&text=Brand name "+ formData.brandName +", Model Number "+ formData.modelName+", City "+ formData.city +", Warranty "+formData.warranty ? 'Yes':'NO' +", Ram "+ formData.ram+", Storage "+ formData.storage+", condition "+ Condition +", User Name "+ formData.name+", email "+ formData.email;
 };
 
   return (
